@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Watchlist</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>❤️ My Watchlist</h1>
+
+{% for m in movies %}
+  <div class="card">
+    <h3>{{ m[1] }}</h3>
+    <p>{{ m[2] }}</p>
+    <a href="/movie/{{ m[0] }}">▶ Watch</a>
+  </div>
+{% endfor %}
+
+<a href="/home">⬅ Back</a>
+</body>
+</html>

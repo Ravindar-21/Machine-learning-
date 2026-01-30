@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="navbar">
+  <h2>🍰 My Orders</h2>
+  <a href="/home">Home</a>
+</div>
+
+<div class="container">
+  <h2>Order History</h2>
+
+  {% for order in orders %}
+    <div class="card">
+      <div class="card-content">
+        <h3>{{ order[0] }}</h3>
+        <p>Price: ₹{{ order[1] }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

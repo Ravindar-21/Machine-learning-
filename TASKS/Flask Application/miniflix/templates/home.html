@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MiniFlix - Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+    <h2>MiniFlix</h2>
+    <a href="/logout">Logout</a>
+</header>
+
+<form method="get">
+    <input type="text" name="search" placeholder="Search movies">
+    <button type="submit">Search</button>
+</form>
+
+<div class="movies">
+{% for m in movies %}
+  <div class="card">
+    <h3>{{ m[1] }}</h3>
+    <p>{{ m[2] }}</p>
+    <a href="/movie/{{ m[0] }}">▶ Watch</a>
+    <a href="/add_watchlist/{{ m[0] }}">❤️ Add to Watchlist</a>
+  </div>
+{% endfor %}
+</div>
+
+</body>
+</html>

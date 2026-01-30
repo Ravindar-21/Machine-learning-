@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="navbar">
+  <h2>🍰 Cake Shop</h2>
+  <a href="/home">Home</a>
+</div>
+
+<div class="container">
+  <h2>Our Cakes</h2>
+
+  <div class="card-grid">
+    {% for cake in cakes %}
+    <div class="card">
+      <img src="{{ cake[4] }}"
+            alt="{{ cake[1] }}"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=Cake+Image';">
+
+      <div class="card-content">
+        <h3>{{ cake[1] }}</h3>
+        <p>{{ cake[3] }}</p>
+        <p><b>₹{{ cake[2] }}</b></p>
+        <a class="btn" href="/order/{{ cake[0] }}">Order Now</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+<a href="/admin/logout">Logout</a>
+
+<h2>Add Movie</h2>
+
+<form method="POST" action="/admin/add_movie" enctype="multipart/form-data">
+    <input name="title" placeholder="Movie title" required>
+    <input name="description" placeholder="Description" required>
+    <input type="file" name="video" accept="video/mp4" required>
+    <button>Add Movie</button>
+</form>
+
+<h2>All Movies</h2>
+
+<ul>
+{% for m in movies %}
+    <li>
+        {{ m[1] }} — {{ m[3] }}
+        <a href="/admin/delete/{{ m[0] }}">❌ Delete</a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>

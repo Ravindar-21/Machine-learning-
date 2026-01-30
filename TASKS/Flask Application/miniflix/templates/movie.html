@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie[1] }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>{{ movie[1] }}</h1>
+<p>{{ movie[2] }}</p>
+
+<video width="700" controls>
+    <source src="{{ url_for('static', filename='videos/' + movie[3]) }}">
+</video>
+
+<br><br>
+<a href="/home">⬅ Back</a>
+
+</body>
+</html>
